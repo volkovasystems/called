@@ -1,0 +1,26 @@
+{
+  "name": "called",
+  "description": "Call callback once but better.",
+  "main": "called.js",
+  "version": "0.0.0",
+  "authors": [
+    "Richeve S. Bebedor <richeve.bebedor@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "callback",
+    "once"
+  ],
+  "homepage": "https://github.com/volkovasystems/called",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "raze": "^0.0.3",
+    "harden": "^0.3.0"
+  }
+}

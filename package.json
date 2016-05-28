@@ -1,0 +1,27 @@
+{
+  "name": "called",
+  "version": "0.0.0",
+  "description": "Call callback once but better.",
+  "main": "called.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/volkovasystems/called.git"
+  },
+  "keywords": [
+    "callback",
+    "once"
+  ],
+  "author": "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/volkovasystems/called/issues"
+  },
+  "homepage": "https://github.com/volkovasystems/called#readme",
+  "dependencies": {
+    "harden": "^0.3.0",
+    "raze": "0.0.3"
+  }
+}
