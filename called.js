@@ -71,6 +71,16 @@ if( typeof window != "undefined" &&
 }
 
 var called = function called( callback ){
+	/*:
+		@meta-configuration:
+			{
+				"callback:required": "function"
+			}
+		@end-meta-configuration
+	*/
+
+	callback = callback || function callback( ){ return this; };
+
 	var _callback = ( function _callback( ){
 		if( _callback.CALLED === "called" ){
 			console.log( "warning, callback is called again", callback.name );
