@@ -70,30 +70,42 @@ if( typeof window != "undefined" &&
 	throw new Error( "raze is not defined" );
 }
 
-var called = function called( callback ){
+var called = function called( procedure ){
 	/*:
 		@meta-configuration:
 			{
-				"callback:required": "function"
+				"procedure:required": "function"
 			}
 		@end-meta-configuration
 	*/
 
-	callback = callback || function callback( ){ return this; };
+	procedure = procedure || function procedure( ){ return this; };
 
-	var _callback = ( function _callback( ){
-		if( _callback.CALLED === "called" ){
-			console.log( "warning, callback is called again", callback.name );
+	if( typeof procedure != "function" ){
+		throw new Error( "invalid procedure" );
+	}
+
+	var _procedure = ( function _procedure( ){
+		if( _procedure.CALLED === "called" ){
+			if( !called.silent ){
+				console.log( "warning, procedure is called again", procedure.name );
+			}
 
 			return this;
 		}
 
-		harden( "CALLED", "called", _callback );
+		harden( "CALLED", "called", _procedure );
 
-		return callback.apply( this, raze( arguments ) );
+		return procedure.apply( this, raze( arguments ) );
 	} ).bind( this );
 
-	return _callback;
+	return _procedure;
+};
+
+called.silent = true;
+
+called.setSilent = function setSilent( silent ){
+	called.silent = silent;
 };
 
 if( typeof module != "undefined" ){
