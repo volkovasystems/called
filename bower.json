@@ -2,7 +2,7 @@
   "name": "called",
   "description": "Call callback once but better.",
   "main": "called.js",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "authors": [
     "Richeve S. Bebedor <richeve.bebedor@gmail.com>"
   ],
@@ -20,7 +20,7 @@
     "tests"
   ],
   "dependencies": {
-    "raze": "^0.0.3",
-    "harden": "^0.3.0"
+    "harden": "^0.3.1",
+    "raze": "^0.0.4"
   }
 }
