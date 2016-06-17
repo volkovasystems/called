@@ -2,7 +2,7 @@
   "name": "called",
   "description": "Call callback once but better.",
   "main": "called.js",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "authors": [
     "Richeve S. Bebedor <richeve.bebedor@gmail.com>"
   ],

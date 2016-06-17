@@ -85,6 +85,12 @@ var called = function called( procedure ){
 		throw new Error( "invalid procedure" );
 	}
 
+	if( typeof procedure._procedure == "function" &&
+ 		procedure._procedure.CALLED_ONCE === "called-once" )
+	{
+		return procedure._procedure;
+	}
+
 	var _procedure = ( function _procedure( ){
 		if( _procedure.CALLED === "called" ){
 			if( !called.silent ){
@@ -98,6 +104,9 @@ var called = function called( procedure ){
 
 		return procedure.apply( this, raze( arguments ) );
 	} ).bind( this );
+
+	harden( "CALLED_ONCE", "called-once", _procedure );
+	harden( "_procedure", _procedure, procedure );
 
 	return _procedure;
 };
