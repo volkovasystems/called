@@ -1,6 +1,6 @@
 "use strict";
 
-/*:
+/*;
 	@module-license:
 		The MIT License (MIT)
 		@mit-license
@@ -48,7 +48,8 @@
 	@include:
 		{
 			"harden": "harden",
-			"raze": "raze"
+			"raze": "raze",
+			"zelf": "zelf"
 		}
 	@end-include
 */
@@ -56,6 +57,7 @@
 if( typeof window == "undefined" ){
 	var harden = require( "harden" );
 	var raze = require( "raze" );
+	var zelf = require( "zelf" );
 }
 
 if( typeof window != "undefined" &&
@@ -70,8 +72,14 @@ if( typeof window != "undefined" &&
 	throw new Error( "raze is not defined" );
 }
 
+if( typeof window != "undefined" &&
+	!( "zelf" in window ) )
+{
+	throw new Error( "zelf is not defined" );
+}
+
 var called = function called( procedure ){
-	/*:
+	/*;
 		@meta-configuration:
 			{
 				"procedure:required": "function"
@@ -79,42 +87,38 @@ var called = function called( procedure ){
 		@end-meta-configuration
 	*/
 
-	procedure = procedure || function procedure( ){ return this; };
+	var self = zelf( this );
 
-	if( typeof procedure != "function" ){
-		throw new Error( "invalid procedure" );
+	procedure = procedure || function procedure( ){ return self; };
+
+	if( procedure.CALLED_ONCE === "called-once" ){
+		return procedure;
 	}
 
 	if( typeof procedure._procedure == "function" &&
- 		procedure._procedure.CALLED_ONCE === "called-once" )
+		procedure._procedure.CALLED_ONCE === "called-once" )
 	{
 		return procedure._procedure;
 	}
 
 	var _procedure = ( function _procedure( ){
 		if( _procedure.CALLED === "called" ){
-			if( !called.silent ){
-				console.log( "warning, procedure is called again", procedure.name );
-			}
-
-			return this;
+			return _procedure.result;
 		}
 
 		harden( "CALLED", "called", _procedure );
 
-		return procedure.apply( this, raze( arguments ) );
-	} ).bind( this );
+		var result = procedure.apply( self, raze( arguments ) );
+
+		harden( "result", result, _procedure );
+
+		return result;
+	} ).bind( self );
 
 	harden( "CALLED_ONCE", "called-once", _procedure );
 	harden( "_procedure", _procedure, procedure );
 
 	return _procedure;
-};
-
-called.silent = true;
-
-called.setSilent = function setSilent( silent ){
-	called.silent = silent;
 };
 
 if( typeof module != "undefined" ){

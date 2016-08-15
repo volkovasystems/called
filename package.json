@@ -1,6 +1,6 @@
 {
   "name": "called",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "description": "Call callback once but better.",
   "main": "called.js",
   "scripts": {
@@ -22,6 +22,7 @@
   "homepage": "https://github.com/volkovasystems/called#readme",
   "dependencies": {
     "harden": "^0.3.2",
-    "raze": "0.0.5"
+    "raze": "0.0.5",
+    "zelf": "0.0.0"
   }
 }
