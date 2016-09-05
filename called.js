@@ -115,6 +115,7 @@ var called = function called( procedure ){
 		return result;
 	} ).bind( self );
 
+	harden( "name", procedure.name, _procedure );
 	harden( "CALLED_ONCE", "called-once", _procedure );
 	harden( "_procedure", _procedure, procedure );
 
