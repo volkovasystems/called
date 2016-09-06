@@ -47,6 +47,7 @@
 
 	@include:
 		{
+			"ate": "ate",
 			"harden": "harden",
 			"raze": "raze",
 			"zelf": "zelf"
@@ -55,9 +56,16 @@
 */
 
 if( typeof window == "undefined" ){
+	var ate = require( "ate" );
 	var harden = require( "harden" );
 	var raze = require( "raze" );
 	var zelf = require( "zelf" );
+}
+
+if( typeof window != "undefined" &&
+	!( "ate" in window ) )
+{
+	throw new Error( "ate is not defined" );
 }
 
 if( typeof window != "undefined" &&
@@ -78,6 +86,9 @@ if( typeof window != "undefined" &&
 	throw new Error( "zelf is not defined" );
 }
 
+harden( "CALLED", "called" );
+harden( "CALLED_ONCE", "called-once" );
+
 var called = function called( procedure ){
 	/*;
 		@meta-configuration:
@@ -91,35 +102,38 @@ var called = function called( procedure ){
 
 	procedure = procedure || function procedure( ){ return self; };
 
-	if( procedure.CALLED_ONCE === "called-once" ){
+	if( procedure.CALLED_ONCE === CALLED_ONCE ){
 		return procedure;
 	}
 
-	if( typeof procedure._procedure == "function" &&
-		procedure._procedure.CALLED_ONCE === "called-once" )
+	if( typeof procedure.method == "function" &&
+		procedure.method.CALLED_ONCE === CALLED_ONCE )
 	{
-		return procedure._procedure;
+		return procedure.method;
 	}
 
-	var _procedure = ( function _procedure( ){
-		if( _procedure.CALLED === "called" ){
-			return _procedure.result;
+	var method = function method( ){
+		if( method.CALLED === CALLED ){
+			return method.result;
 		}
 
-		harden( "CALLED", "called", _procedure );
+		harden( "CALLED", CALLED, method );
 
 		var result = procedure.apply( self, raze( arguments ) );
 
-		harden( "result", result, _procedure );
+		harden( "result", result, method );
 
 		return result;
-	} ).bind( self );
+	};
 
-	harden( "name", procedure.name, _procedure );
-	harden( "CALLED_ONCE", "called-once", _procedure );
-	harden( "_procedure", _procedure, procedure );
+	ate( "name", procedure.name, method );
 
-	return _procedure;
+	method = method.bind( self );
+
+	harden( "CALLED_ONCE", CALLED_ONCE, method );
+	harden( "method", method, procedure );
+
+	return method;
 };
 
 if( typeof module != "undefined" ){
