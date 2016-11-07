@@ -49,15 +49,17 @@
 		{
 			"ate": "ate",
 			"harden": "harden",
+			"protype": "protype",
 			"raze": "raze",
 			"zelf": "zelf"
 		}
 	@end-include
 */
 
-if( typeof window == "undefined" ){
+if( typeof require == "function" ){
 	var ate = require( "ate" );
 	var harden = require( "harden" );
+	var protype = require( "protype" );
 	var raze = require( "raze" );
 	var zelf = require( "zelf" );
 }
@@ -75,6 +77,12 @@ if( typeof window != "undefined" &&
 }
 
 if( typeof window != "undefined" &&
+	!( "protype" in window ) )
+{
+	throw new Error( "protype is not defined" );
+}
+
+if( typeof window != "undefined" &&
 	!( "raze" in window ) )
 {
 	throw new Error( "raze is not defined" );
@@ -89,7 +97,7 @@ if( typeof window != "undefined" &&
 harden( "CALLED", "called" );
 harden( "CALLED_ONCE", "called-once" );
 
-var called = function called( procedure ){
+this.called = function called( procedure ){
 	/*;
 		@meta-configuration:
 			{
@@ -98,7 +106,7 @@ var called = function called( procedure ){
 		@end-meta-configuration
 	*/
 
-	var self = zelf( this );
+	let self = zelf( this );
 
 	procedure = procedure || function procedure( ){ return self; };
 
@@ -106,20 +114,19 @@ var called = function called( procedure ){
 		return procedure;
 	}
 
-	if( typeof procedure.method == "function" &&
-		procedure.method.CALLED_ONCE === CALLED_ONCE )
-	{
-		return procedure.method;
+	let procedureMethod = procedure.method;
+	if( protype( procedureMethod, FUNCTION ) && procedureMethod.CALLED_ONCE === CALLED_ONCE ){
+		return procedureMethod;
 	}
 
-	var method = function method( ){
+	let method = function method( ){
 		if( method.CALLED === CALLED ){
 			return method.result;
 		}
 
 		harden( "CALLED", CALLED, method );
 
-		var result = procedure.apply( self, raze( arguments ) );
+		let result = procedure.apply( self, raze( arguments ) );
 
 		harden( "result", result, method );
 
@@ -136,6 +143,8 @@ var called = function called( procedure ){
 	return method;
 };
 
-if( typeof module != "undefined" ){
-	module.exports = called;
+if( typeof module != "undefined" &&
+	typeof module.exports != "undefined" )
+{
+	module.exports = this.called;
 }
