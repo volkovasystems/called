@@ -64,40 +64,30 @@ if( typeof require == "function" ){
 	var zelf = require( "zelf" );
 }
 
-if( typeof window != "undefined" &&
-	!( "ate" in window ) )
-{
+if( typeof window != "undefined" && !( "ate" in window ) ){
 	throw new Error( "ate is not defined" );
 }
 
-if( typeof window != "undefined" &&
-	!( "harden" in window ) )
-{
+if( typeof window != "undefined" && !( "harden" in window ) ){
 	throw new Error( "harden is not defined" );
 }
 
-if( typeof window != "undefined" &&
-	!( "protype" in window ) )
-{
+if( typeof window != "undefined" && !( "protype" in window ) ){
 	throw new Error( "protype is not defined" );
 }
 
-if( typeof window != "undefined" &&
-	!( "raze" in window ) )
-{
+if( typeof window != "undefined" && !( "raze" in window ) ){
 	throw new Error( "raze is not defined" );
 }
 
-if( typeof window != "undefined" &&
-	!( "zelf" in window ) )
-{
+if( typeof window != "undefined" && !( "zelf" in window ) ){
 	throw new Error( "zelf is not defined" );
 }
 
 harden( "CALLED", "called" );
 harden( "CALLED_ONCE", "called-once" );
 
-this.called = function called( procedure ){
+var called = function called( procedure ){
 	/*;
 		@meta-configuration:
 			{
@@ -143,8 +133,6 @@ this.called = function called( procedure ){
 	return method;
 };
 
-if( typeof module != "undefined" &&
-	typeof module.exports != "undefined" )
-{
-	module.exports = this.called;
+if( typeof module != "undefined" && typeof module.exports != "undefined" ){
+	module.exports = called;
 }
