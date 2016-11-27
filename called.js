@@ -1,5 +1,3 @@
-"use strict";
-
 /*;
 	@module-license:
 		The MIT License (MIT)
@@ -47,47 +45,25 @@
 
 	@include:
 		{
-			"ate": "ate",
 			"harden": "harden",
 			"protype": "protype",
 			"raze": "raze",
+			"vound": "vound",
 			"zelf": "zelf"
 		}
 	@end-include
 */
 
-if( typeof require == "function" ){
-	var ate = require( "ate" );
-	var harden = require( "harden" );
-	var protype = require( "protype" );
-	var raze = require( "raze" );
-	var zelf = require( "zelf" );
-}
-
-if( typeof window != "undefined" && !( "ate" in window ) ){
-	throw new Error( "ate is not defined" );
-}
-
-if( typeof window != "undefined" && !( "harden" in window ) ){
-	throw new Error( "harden is not defined" );
-}
-
-if( typeof window != "undefined" && !( "protype" in window ) ){
-	throw new Error( "protype is not defined" );
-}
-
-if( typeof window != "undefined" && !( "raze" in window ) ){
-	throw new Error( "raze is not defined" );
-}
-
-if( typeof window != "undefined" && !( "zelf" in window ) ){
-	throw new Error( "zelf is not defined" );
-}
+const harden = require( "harden" );
+const protype = require( "protype" );
+const raze = require( "raze" );
+const vound = require( "vound" );
+const zelf = require( "zelf" );
 
 harden( "CALLED", "called" );
 harden( "CALLED_ONCE", "called-once" );
 
-var called = function called( procedure ){
+const called = function called( procedure ){
 	/*;
 		@meta-configuration:
 			{
@@ -117,15 +93,19 @@ var called = function called( procedure ){
 		harden( "CALLED", CALLED, method );
 
 		let result = procedure.apply( self, raze( arguments ) );
+		/*;
+			@note:
+				Do not modify this apply call here, we cannot use bind since it will
+					try to hard override the context.
+			@end-note
+		*/
 
 		harden( "result", result, method );
 
 		return result;
 	};
 
-	ate( "name", procedure.name, method );
-
-	method = method.bind( self );
+	method = vound( method, self, procedure.name );
 
 	harden( "CALLED_ONCE", CALLED_ONCE, method );
 	harden( "method", method, procedure );
@@ -133,6 +113,4 @@ var called = function called( procedure ){
 	return method;
 };
 
-if( typeof module != "undefined" && typeof module.exports != "undefined" ){
-	module.exports = called;
-}
+module.exports = called;
