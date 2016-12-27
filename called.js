@@ -45,6 +45,7 @@
 
 	@include:
 		{
+			"ate": "ate",
 			"harden": "harden",
 			"protype": "protype",
 			"raze": "raze",
@@ -54,6 +55,7 @@
 	@end-include
 */
 
+const ate = require( "ate" );
 const harden = require( "harden" );
 const protype = require( "protype" );
 const raze = require( "raze" );
@@ -63,54 +65,60 @@ const zelf = require( "zelf" );
 harden( "CALLED", "called" );
 harden( "CALLED_ONCE", "called-once" );
 
-const called = function called( procedure ){
+const called = function called( method ){
 	/*;
 		@meta-configuration:
 			{
-				"procedure:required": "function"
+				"method:required": "function"
 			}
 		@end-meta-configuration
 	*/
 
 	let self = zelf( this );
 
-	procedure = procedure || function procedure( ){ return self; };
+	method = method || function method( ){ return self; };
 
-	if( procedure.CALLED_ONCE === CALLED_ONCE ){
-		return procedure;
+	if( method.CALLED_ONCE === CALLED_ONCE ){
+		return method;
 	}
 
-	let procedureMethod = procedure.method;
-	if( protype( procedureMethod, FUNCTION ) && procedureMethod.CALLED_ONCE === CALLED_ONCE ){
-		return procedureMethod;
+	if( !protype( method, FUNCTION ) ){
+		throw new Error( "invalid method" );
 	}
 
-	let method = function method( ){
-		if( method.CALLED === CALLED ){
-			return method.result;
+	let procedure = function procedure( ){
+		if( procedure.CALLED === CALLED ){
+			return procedure.result;
 		}
 
-		harden( "CALLED", CALLED, method );
+		harden( "CALLED", CALLED, procedure );
 
-		let result = procedure.apply( self, raze( arguments ) );
 		/*;
 			@note:
 				Do not modify this apply call here, we cannot use bind since it will
 					try to hard override the context.
 			@end-note
 		*/
+		let result = method.apply( self, raze( arguments ) );
 
-		harden( "result", result, method );
+		harden( "result", result, procedure );
 
 		return result;
 	};
 
-	method = vound( method, self, procedure.name );
+	procedure = vound( procedure, self, method.name );
 
-	harden( "CALLED_ONCE", CALLED_ONCE, method );
-	harden( "method", method, procedure );
+	/*;
+		@note:
+			This will override the method imposed by vound to
+				the original method.
+		@end-note
+	*/
+	ate( "method", method, procedure );
 
-	return method;
+	harden( "CALLED_ONCE", CALLED_ONCE, procedure );
+
+	return procedure;
 };
 
 module.exports = called;
