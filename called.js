@@ -49,7 +49,6 @@
 			"harden": "harden",
 			"protype": "protype",
 			"raze": "raze",
-			"vound": "vound",
 			"zelf": "zelf"
 		}
 	@end-include
@@ -59,7 +58,6 @@ const ate = require( "ate" );
 const harden = require( "harden" );
 const protype = require( "protype" );
 const raze = require( "raze" );
-const vound = require( "vound" );
 const zelf = require( "zelf" );
 
 harden( "CALLED", "called" );
@@ -106,14 +104,10 @@ const called = function called( method ){
 		return result;
 	};
 
-	procedure = vound( procedure, self, method.name );
+	transpher( method, procedure );
 
-	/*;
-		@note:
-			This will override the method imposed by vound to
-				the original method.
-		@end-note
-	*/
+	ate( "name", method.name, procedure );
+
 	ate( "method", method, procedure );
 
 	harden( "CALLED_ONCE", CALLED_ONCE, procedure );
