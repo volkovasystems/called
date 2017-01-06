@@ -3,7 +3,7 @@
 		The MIT License (MIT)
 		@mit-license
 
-		Copyright (@c) 2016 Richeve Siodina Bebedor
+		Copyright (@c) 2017 Richeve Siodina Bebedor
 		@email: richeve.bebedor@gmail.com
 
 		Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -45,8 +45,8 @@
 
 	@include:
 		{
-			"ate": "ate",
 			"harden": "harden",
+			"kloak": "kloak",
 			"protype": "protype",
 			"raze": "raze",
 			"zelf": "zelf"
@@ -54,8 +54,8 @@
 	@end-include
 */
 
-const ate = require( "ate" );
 const harden = require( "harden" );
+const kloak = require( "kloak" );
 const protype = require( "protype" );
 const raze = require( "raze" );
 const zelf = require( "zelf" );
@@ -104,13 +104,7 @@ const called = function called( method ){
 		return result;
 	};
 
-	transpher( method, procedure );
-
-	ate( "name", method.name, procedure );
-
-	ate( "method", method, procedure );
-
-	harden( "CALLED_ONCE", CALLED_ONCE, procedure );
+	kloak( method, procedure, CALLED_ONCE );
 
 	return procedure;
 };
