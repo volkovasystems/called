@@ -60,8 +60,8 @@ const protype = require( "protype" );
 const raze = require( "raze" );
 const zelf = require( "zelf" );
 
-harden( "CALLED", "called" );
-harden( "CALLED_ONCE", "called-once" );
+const CALLED = "called";
+const CALLED_ONCE = "called-once";
 
 const called = function called( method ){
 	/*;
@@ -85,7 +85,7 @@ const called = function called( method ){
 	}
 
 	let procedure = function procedure( ){
-		if( procedure.CALLED === CALLED ){
+		if( procedure.called( ) ){
 			return procedure.result;
 		}
 
@@ -105,6 +105,15 @@ const called = function called( method ){
 	};
 
 	kloak( method, procedure, CALLED_ONCE );
+
+	/*;
+		@note:
+			This will let you check if the procedure has been called.
+		@end-note
+	*/
+	harden( "called", function called( ){
+		return procedure.CALLED === CALLED;
+	}, procedure );
 
 	return procedure;
 };
