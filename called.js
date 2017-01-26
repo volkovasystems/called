@@ -1,3 +1,5 @@
+"use strict";
+
 /*;
 	@module-license:
 		The MIT License (MIT)
@@ -32,6 +34,9 @@
 			"file": "called.js",
 			"module": "called",
 			"author": "Richeve S. Bebedor",
+			"contributors": [
+				"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
+			],
 			"eMail": "richeve.bebedor@gmail.com",
 			"repository": "https://github.com/volkovasystems/called.git",
 			"test": "called-test.js",
