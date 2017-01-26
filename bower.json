@@ -1,12 +1,13 @@
 {
   "name": "called",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "Call callback once but better.",
   "main": "called.js",
   "support": "called.support.js",
   "deploy": "called.deploy.js",
   "authors": [
-    "Richeve S. Bebedor <richeve.bebedor@gmail.com>"
+    "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
+    "John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
   ],
   "license": "MIT",
   "keywords": [
@@ -23,9 +24,8 @@
   ],
   "dependencies": {
     "harden": "^0.13.0",
-    "kloak": "^0.1.0",
-    "protype": "^0.8.0",
-    "raze": "^0.6.0",
-    "zelf": "^0.4.0"
+    "kloak": "^0.2.0",
+    "protype": "^0.9.0",
+    "raze": "^0.7.0"
   }
 }
