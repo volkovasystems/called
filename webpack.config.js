@@ -1,3 +1,5 @@
+"use strict";
+
 const webpack = require( "webpack" );
 const ResolverPlugin = webpack.ResolverPlugin;
 const DirectoryDescriptionFilePlugin = ResolverPlugin.DirectoryDescriptionFilePlugin;
