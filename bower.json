@@ -1,10 +1,8 @@
 {
   "name": "called",
-  "version": "0.9.0",
+  "version": "0.10.0",
   "description": "Call callback once but better.",
-  "main": "called.js",
-  "support": "called.support.js",
-  "deploy": "called.deploy.js",
+  "main": "called.deploy.js",
   "authors": [
     "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
     "John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
@@ -24,7 +22,7 @@
   ],
   "dependencies": {
     "harden": "^0.14.0",
-    "kloak": "^0.3.0",
+    "kloak": "^0.4.0",
     "protype": "^0.11.0",
     "raze": "^0.12.0"
   }

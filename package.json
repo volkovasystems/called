@@ -1,10 +1,11 @@
 {
   "name": "called",
-  "version": "0.9.0",
+  "version": "0.10.0",
   "description": "Call callback once but better.",
   "main": "called.js",
   "support": "called.support.js",
   "deploy": "called.deploy.js",
+  "browser": "called.deploy.js",
   "scripts": {
     "build": "babel called.js -o called.support.js && webpack",
     "test": "mocha called-test.js"
@@ -29,7 +30,7 @@
   "dependencies": {
     "babel-runtime": "^6.22.0",
     "harden": "^0.14.0",
-    "kloak": "^0.3.0",
+    "kloak": "^0.4.0",
     "protype": "^0.11.0",
     "raze": "^0.12.0"
   },
@@ -39,6 +40,6 @@
     "babel-plugin-transform-runtime": "^6.22.0",
     "babel-preset-latest": "^6.22.0",
     "source-map-loader": "^0.1.6",
-    "webpack": "^1.14.0"
+    "webpack": "^2.2.1"
   }
 }
