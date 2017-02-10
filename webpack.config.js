@@ -7,7 +7,6 @@ module.exports = {
 	"entry": "./called.support.js",
 	"resolve": {
 		"descriptionFiles": [
-			".bower.json",
 			"bower.json",
 			"package.json"
 		],
@@ -48,5 +47,5 @@ module.exports = {
 			"mangle": false
 		} )
 	],
-	"devtool": "#inline-source-map"
+	"devtool": "#cheap-module-inline-source-map"
 };
