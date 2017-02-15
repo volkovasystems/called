@@ -24,9 +24,9 @@ module.exports = {
 	"module": {
 		"rules": [
 			{
-				"enforce": "pre",
 				"test": /\.support\.js$/,
-				"loader": "source-map-loader"
+				"loader": "source-map-loader",
+				"enforce": "pre"
 			}
 		]
 	},
@@ -47,5 +47,5 @@ module.exports = {
 			"mangle": false
 		} )
 	],
-	"devtool": "#cheap-module-inline-source-map"
+	"devtool": "#source-map"
 };
