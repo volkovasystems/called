@@ -1,13 +1,13 @@
 {
   "name": "called",
-  "version": "0.11.0",
+  "version": "0.12.0",
   "description": "Call callback once but better.",
   "main": "called.js",
   "support": "called.support.js",
   "deploy": "called.deploy.js",
   "browser": "called.deploy.js",
   "scripts": {
-    "build": "babel called.js -o called.support.js && webpack",
+    "build": "babel called.js --out-file called.support.js --source-maps && webpack --progress",
     "test": "mocha called-test.js"
   },
   "repository": {
@@ -28,16 +28,16 @@
   },
   "homepage": "https://github.com/volkovasystems/called#readme",
   "dependencies": {
-    "babel-runtime": "^6.22.0",
-    "harden": "^0.14.0",
-    "kloak": "^0.5.0",
-    "protype": "^0.15.0",
-    "raze": "^0.16.0"
+    "babel-runtime": "^6.23.0",
+    "harden": "^0.16.0",
+    "kloak": "^0.6.0",
+    "protype": "^0.17.0",
+    "raze": "^0.18.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.22.2",
-    "babel-core": "^6.22.1",
-    "babel-plugin-transform-runtime": "^6.22.0",
+    "babel-cli": "^6.23.0",
+    "babel-core": "^6.23.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-latest": "^6.22.0",
     "source-map-loader": "^0.1.6",
     "webpack": "^2.2.1"
