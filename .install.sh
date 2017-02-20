@@ -18,4 +18,5 @@ harden \
 kloak \
 protype \
 raze \
---save
+--save \
+--force-latest
