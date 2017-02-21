@@ -1,6 +1,4 @@
-"use strict";
-
-/*;
+"use strict"; /*;
               	@module-license:
               		The MIT License (MIT)
               		@mit-license
