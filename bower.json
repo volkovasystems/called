@@ -1,6 +1,6 @@
 {
   "name": "called",
-  "version": "0.14.0",
+  "version": "0.15.0",
   "description": "Call callback once but better.",
   "main": "called.deploy.js",
   "support": "called.support.js",
@@ -22,9 +22,9 @@
     "tests"
   ],
   "dependencies": {
-    "harden": "^0.16.0",
-    "kloak": "^0.8.0",
-    "protype": "^0.17.0",
-    "raze": "^0.19.0"
+    "harden": "^0.19.0",
+    "kloak": "^0.10.0",
+    "protype": "^0.20.0",
+    "raze": "^0.23.0"
   }
 }
