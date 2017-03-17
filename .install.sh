@@ -1,9 +1,11 @@
 yarn add \
 babel-runtime \
+dephall \
 harden \
 kloak \
-protype \
 raze \
+wichevr \
+zelf \
 --save && \
 yarn add \
 babel-cli \
@@ -14,9 +16,11 @@ source-map-loader \
 webpack \
 --dev && \
 bower install \
+dephall \
 harden \
 kloak \
-protype \
 raze \
+wichevr \
+zelf \
 --save \
 --force-latest

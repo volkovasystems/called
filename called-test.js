@@ -1,17 +1,11 @@
-"use strict";
 
 const called = require( "./called.js" );
 
-function resolve( option, callback ){
+console.log( called( function test( number, string ){
+	return string;
+} )( 123, "hello world" ) );
 
-	option = option || { };
 
-	callback = called.bind( option.self )( callback );
-
-	console.log( "trigger", callback.toString( ) );
-
-	return this;
-
-};
-
-resolve( );
+console.log( called( function callback( error, result ){
+	//do nothing
+}, true )( null, "hello yeah" ) );

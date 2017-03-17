@@ -44,47 +44,50 @@
 
 	@module-documentation:
 		Call the callback once but better.
+
+		We will follow the standard conventional callback parameter structure
+			`callback( error, result, [ parameter... ] )`
 	@end-module-documentation
 
 	@include:
 		{
+			"dephall": "dephall",
 			"harden": "harden",
 			"kloak": "kloak",
-			"protype": "protype",
 			"raze": "raze",
+			"wichevr": "wichevr",
 			"zelf": "zelf"
 		}
 	@end-include
 */
 
+const dephall = require( "dephall" );
 const harden = require( "harden" );
 const kloak = require( "kloak" );
-const protype = require( "protype" );
 const raze = require( "raze" );
+const wichevr = require( "wichevr" );
 const zelf = require( "zelf" );
 
 const CALLED = "called";
 const CALLED_ONCE = "called-once";
 
-const called = function called( method ){
+const called = function called( method, defer ){
 	/*;
 		@meta-configuration:
 			{
-				"method:required": "function"
+				"method:required": "function",
+				"defer": "boolean"
 			}
 		@end-meta-configuration
 	*/
 
 	let self = zelf( this );
 
-	method = method || function method( ){ return self; };
+	[ method, defer ] = dephall( arguments, [ FUNCTION, BOOLEAN ],
+		function method( ){ return self; }, false );
 
 	if( method.CALLED_ONCE === CALLED_ONCE ){
 		return method;
-	}
-
-	if( !protype( method, FUNCTION ) ){
-		throw new Error( "invalid method" );
 	}
 
 	let procedure = function procedure( ){
@@ -94,13 +97,26 @@ const called = function called( method ){
 
 		harden( "CALLED", CALLED, procedure );
 
+		let parameter = raze( arguments );
+
 		/*;
 			@note:
 				Do not modify this apply call here, we cannot use bind since it will
 					try to hard override the context.
 			@end-note
 		*/
-		let result = method.apply( self, raze( arguments ) );
+		let result = method.apply( self, parameter );
+
+		/*;
+			@note:
+				If defer is activated, it will follow the standard conventional
+					callback parameter structure and will defer for result and error
+					if the method does not return a result.
+			@end-note
+		*/
+		if( defer ){
+			result = wichevr( result, parameter[ 1 ], parameter[ 0 ] );
+		}
 
 		harden( "result", result, procedure );
 

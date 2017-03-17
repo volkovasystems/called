@@ -1028,6 +1028,18 @@ decamelize@^1.0.0, decamelize@^1.1.1:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/decamelize/-/decamelize-1.2.0.tgz#f6534d15148269b20352e7bee26f501f9a191290"
 
+decrease@^0.18.0:
+  version "0.18.0"
+  resolved "https://registry.yarnpkg.com/decrease/-/decrease-0.18.0.tgz#7be73d3dfdb61f0bae1dc056f970dd72c099e671"
+  dependencies:
+    arkount "^0.3.0"
+    babel-runtime "^6.23.0"
+    doubt "^0.22.0"
+    falzy "^0.16.0"
+    protype "^0.20.0"
+    raze "^0.23.0"
+    truly "^0.16.0"
+
 deep-extend@~0.4.0:
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/deep-extend/-/deep-extend-0.4.1.tgz#efe4113d08085f4e6f9687759810f807469e2253"
@@ -1050,6 +1062,21 @@ dephall@^0.18.0:
     doubt "^0.22.0"
     falze "^0.17.0"
     harden "^0.19.0"
+    pyck "^0.18.0"
+    raze "^0.23.0"
+    truly "^0.16.0"
+    zelf "^0.10.0"
+
+dephall@^0.19.0:
+  version "0.19.0"
+  resolved "https://registry.yarnpkg.com/dephall/-/dephall-0.19.0.tgz#53067cd3514b21683ca6f7b965c1acc75e80b6a4"
+  dependencies:
+    arid "^0.20.0"
+    babel-runtime "^6.23.0"
+    doubt "^0.22.0"
+    falze "^0.17.0"
+    harden "^0.19.0"
+    plough "^0.20.0"
     pyck "^0.18.0"
     raze "^0.23.0"
     truly "^0.16.0"
@@ -2016,6 +2043,16 @@ pinkie@^2.0.0:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/pinkie/-/pinkie-2.0.4.tgz#72556b80cfa0d48a974e80e77248e80ed4f7f870"
 
+plough@^0.20.0:
+  version "0.20.0"
+  resolved "https://registry.yarnpkg.com/plough/-/plough-0.20.0.tgz#ff422c87fe66fd4047c675be26c6d3f5c3ec254b"
+  dependencies:
+    arid "^0.20.0"
+    babel-runtime "^6.23.0"
+    decrease "^0.18.0"
+    doubt "^0.22.0"
+    raze "^0.23.0"
+
 portel@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/portel/-/portel-0.2.0.tgz#86ab79392ad5aa25b6d1f356b63b9983ff229018"
@@ -2149,8 +2186,8 @@ read-pkg@^1.0.0:
     path-type "^1.0.0"
 
 "readable-stream@^2.0.0 || ^1.1.13", readable-stream@^2.0.1, readable-stream@^2.0.2, readable-stream@^2.0.5, readable-stream@^2.1.0:
-  version "2.2.5"
-  resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.2.5.tgz#a0b187304e05bab01a4ce2b4cc9c607d5aa1d606"
+  version "2.2.6"
+  resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.2.6.tgz#8b43aed76e71483938d12a8d46c6cf1a00b1f816"
   dependencies:
     buffer-shims "^1.0.0"
     core-util-is "~1.0.0"
@@ -2340,8 +2377,8 @@ source-map-loader@^0.2.0:
     source-map "~0.1.33"
 
 source-map-support@^0.4.2:
-  version "0.4.12"
-  resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.4.12.tgz#f47d02bf01efaf0c160d3a37d038401b92b1867e"
+  version "0.4.13"
+  resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.4.13.tgz#9782e6f7deb424d5f173327a1879eb46453bdcd4"
   dependencies:
     source-map "^0.5.6"
 
@@ -2530,8 +2567,8 @@ tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
 
 uglify-js@^2.7.5:
-  version "2.8.12"
-  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-2.8.12.tgz#8a50f5d482243650b7108f6080aa3a6afe2a6c55"
+  version "2.8.13"
+  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-2.8.13.tgz#d0cdf02f3c661484fac601b7e723207b735a374c"
   dependencies:
     source-map "~0.5.1"
     uglify-to-browserify "~1.0.0"
