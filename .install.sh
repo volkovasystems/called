@@ -1,6 +1,6 @@
 yarn add \
 babel-runtime \
-dephall \
+depher \
 harden \
 kloak \
 raze \
@@ -16,7 +16,7 @@ source-map-loader \
 webpack \
 --dev && \
 bower install \
-dephall \
+depher \
 harden \
 kloak \
 raze \

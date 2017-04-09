@@ -61,7 +61,7 @@
 	@end-include
 */
 
-const dephall = require( "dephall" );
+const depher = require( "depher" );
 const harden = require( "harden" );
 const kloak = require( "kloak" );
 const raze = require( "raze" );
@@ -83,8 +83,9 @@ const called = function called( method, defer ){
 
 	let self = zelf( this );
 
-	[ method, defer ] = dephall( arguments, [ FUNCTION, BOOLEAN ],
-		function method( ){ return self; }, false );
+	let parameter = raze( arguments );
+	method = depher( parameter, FUNCTION, function method( ){ return self; } );
+	defer = depher( parameter, BOOLEAN, false );
 
 	if( method.CALLED_ONCE === CALLED_ONCE ){
 		return method;

@@ -1,67 +1,67 @@
-"use strict";var _slicedToArray2 = require("babel-runtime/helpers/slicedToArray");var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} /*;
-                                                                                                                                                                                                                                              	@module-license:
-                                                                                                                                                                                                                                              		The MIT License (MIT)
-                                                                                                                                                                                                                                              		@mit-license
-                                                                                                                                                                                                                                              
-                                                                                                                                                                                                                                              		Copyright (@c) 2017 Richeve Siodina Bebedor
-                                                                                                                                                                                                                                              		@email: richeve.bebedor@gmail.com
-                                                                                                                                                                                                                                              
-                                                                                                                                                                                                                                              		Permission is hereby granted, free of charge, to any person obtaining a copy
-                                                                                                                                                                                                                                              		of this software and associated documentation files (the "Software"), to deal
-                                                                                                                                                                                                                                              		in the Software without restriction, including without limitation the rights
-                                                                                                                                                                                                                                              		to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-                                                                                                                                                                                                                                              		copies of the Software, and to permit persons to whom the Software is
-                                                                                                                                                                                                                                              		furnished to do so, subject to the following conditions:
-                                                                                                                                                                                                                                              
-                                                                                                                                                                                                                                              		The above copyright notice and this permission notice shall be included in all
-                                                                                                                                                                                                                                              		copies or substantial portions of the Software.
-                                                                                                                                                                                                                                              
-                                                                                                                                                                                                                                              		THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-                                                                                                                                                                                                                                              		IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-                                                                                                                                                                                                                                              		FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-                                                                                                                                                                                                                                              		AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-                                                                                                                                                                                                                                              		LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-                                                                                                                                                                                                                                              		OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-                                                                                                                                                                                                                                              		SOFTWARE.
-                                                                                                                                                                                                                                              	@end-module-license
-                                                                                                                                                                                                                                              
-                                                                                                                                                                                                                                              	@module-configuration:
-                                                                                                                                                                                                                                              		{
-                                                                                                                                                                                                                                              			"package": "called",
-                                                                                                                                                                                                                                              			"path": "called/called.js",
-                                                                                                                                                                                                                                              			"file": "called.js",
-                                                                                                                                                                                                                                              			"module": "called",
-                                                                                                                                                                                                                                              			"author": "Richeve S. Bebedor",
-                                                                                                                                                                                                                                              			"contributors": [
-                                                                                                                                                                                                                                              				"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
-                                                                                                                                                                                                                                              			],
-                                                                                                                                                                                                                                              			"eMail": "richeve.bebedor@gmail.com",
-                                                                                                                                                                                                                                              			"repository": "https://github.com/volkovasystems/called.git",
-                                                                                                                                                                                                                                              			"test": "called-test.js",
-                                                                                                                                                                                                                                              			"global": true
-                                                                                                                                                                                                                                              		}
-                                                                                                                                                                                                                                              	@end-module-configuration
-                                                                                                                                                                                                                                              
-                                                                                                                                                                                                                                              	@module-documentation:
-                                                                                                                                                                                                                                              		Call the callback once but better.
-                                                                                                                                                                                                                                              
-                                                                                                                                                                                                                                              		We will follow the standard conventional callback parameter structure
-                                                                                                                                                                                                                                              			`callback( error, result, [ parameter... ] )`
-                                                                                                                                                                                                                                              	@end-module-documentation
-                                                                                                                                                                                                                                              
-                                                                                                                                                                                                                                              	@include:
-                                                                                                                                                                                                                                              		{
-                                                                                                                                                                                                                                              			"dephall": "dephall",
-                                                                                                                                                                                                                                              			"harden": "harden",
-                                                                                                                                                                                                                                              			"kloak": "kloak",
-                                                                                                                                                                                                                                              			"raze": "raze",
-                                                                                                                                                                                                                                              			"wichevr": "wichevr",
-                                                                                                                                                                                                                                              			"zelf": "zelf"
-                                                                                                                                                                                                                                              		}
-                                                                                                                                                                                                                                              	@end-include
-                                                                                                                                                                                                                                              */
+"use strict"; /*;
+              	@module-license:
+              		The MIT License (MIT)
+              		@mit-license
+              
+              		Copyright (@c) 2017 Richeve Siodina Bebedor
+              		@email: richeve.bebedor@gmail.com
+              
+              		Permission is hereby granted, free of charge, to any person obtaining a copy
+              		of this software and associated documentation files (the "Software"), to deal
+              		in the Software without restriction, including without limitation the rights
+              		to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+              		copies of the Software, and to permit persons to whom the Software is
+              		furnished to do so, subject to the following conditions:
+              
+              		The above copyright notice and this permission notice shall be included in all
+              		copies or substantial portions of the Software.
+              
+              		THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+              		IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+              		FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+              		AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+              		LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+              		OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+              		SOFTWARE.
+              	@end-module-license
+              
+              	@module-configuration:
+              		{
+              			"package": "called",
+              			"path": "called/called.js",
+              			"file": "called.js",
+              			"module": "called",
+              			"author": "Richeve S. Bebedor",
+              			"contributors": [
+              				"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
+              			],
+              			"eMail": "richeve.bebedor@gmail.com",
+              			"repository": "https://github.com/volkovasystems/called.git",
+              			"test": "called-test.js",
+              			"global": true
+              		}
+              	@end-module-configuration
+              
+              	@module-documentation:
+              		Call the callback once but better.
+              
+              		We will follow the standard conventional callback parameter structure
+              			`callback( error, result, [ parameter... ] )`
+              	@end-module-documentation
+              
+              	@include:
+              		{
+              			"dephall": "dephall",
+              			"harden": "harden",
+              			"kloak": "kloak",
+              			"raze": "raze",
+              			"wichevr": "wichevr",
+              			"zelf": "zelf"
+              		}
+              	@end-include
+              */
 
-var dephall = require("dephall");
+var depher = require("depher");
 var harden = require("harden");
 var kloak = require("kloak");
 var raze = require("raze");
@@ -81,10 +81,11 @@ var called = function called(method, defer) {
                                              	@end-meta-configuration
                                              */
 
-	var self = zelf(this);var _dephall =
+	var self = zelf(this);
 
-	dephall(arguments, [FUNCTION, BOOLEAN],
-	function method() {return self;}, false);var _dephall2 = (0, _slicedToArray3.default)(_dephall, 2);method = _dephall2[0];defer = _dephall2[1];
+	var parameter = raze(arguments);
+	method = depher(parameter, FUNCTION, function method() {return self;});
+	defer = depher(parameter, BOOLEAN, false);
 
 	if (method.CALLED_ONCE === CALLED_ONCE) {
 		return method;
