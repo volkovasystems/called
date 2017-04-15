@@ -1,10 +1,12 @@
 
 const called = require( "./called.js" );
 
-console.log( called( function test( number, string ){
+let test = called( function test( number, string ){
 	return string;
-} )( 123, "hello world" ) );
+} );
+console.log( test( 123, "hello world" ) );
 
+console.log( test( "yeah", "sample" ) );
 
 console.log( called( function callback( error, result ){
 	//do nothing

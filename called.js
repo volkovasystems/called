@@ -51,7 +51,7 @@
 
 	@include:
 		{
-			"dephall": "dephall",
+			"depher": "depher",
 			"harden": "harden",
 			"kloak": "kloak",
 			"raze": "raze",
@@ -68,8 +68,9 @@ const raze = require( "raze" );
 const wichevr = require( "wichevr" );
 const zelf = require( "zelf" );
 
-const CALLED = "called";
-const CALLED_ONCE = "called-once";
+const CALLED = Symbol( "called" );
+const CALLED_ONCE = Symbol( "called-once" );
+const RESULT = Symbol( "result" );
 
 const called = function called( method, defer ){
 	/*;
@@ -87,16 +88,16 @@ const called = function called( method, defer ){
 	method = depher( parameter, FUNCTION, function method( ){ return self; } );
 	defer = depher( parameter, BOOLEAN, false );
 
-	if( method.CALLED_ONCE === CALLED_ONCE ){
+	if( method[ CALLED_ONCE ] === CALLED_ONCE ){
 		return method;
 	}
 
 	let procedure = function procedure( ){
 		if( procedure.called( ) ){
-			return procedure.result;
+			return procedure[ RESULT ];
 		}
 
-		harden( "CALLED", CALLED, procedure );
+		harden( CALLED, CALLED, procedure );
 
 		let parameter = raze( arguments );
 
@@ -119,7 +120,7 @@ const called = function called( method, defer ){
 			result = wichevr( result, parameter[ 1 ], parameter[ 0 ] );
 		}
 
-		harden( "result", result, procedure );
+		harden( RESULT, result, procedure );
 
 		return result;
 	};
@@ -129,10 +130,12 @@ const called = function called( method, defer ){
 	/*;
 		@note:
 			This will let you check if the procedure has been called.
+
+			This is not safe to be called outside of this context.
 		@end-note
 	*/
 	harden( "called", function called( ){
-		return procedure.CALLED === CALLED;
+		return procedure[ CALLED ] === CALLED;
 	}, procedure );
 
 	return procedure;

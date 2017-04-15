@@ -1,65 +1,65 @@
-"use strict"; /*;
-              	@module-license:
-              		The MIT License (MIT)
-              		@mit-license
-              
-              		Copyright (@c) 2017 Richeve Siodina Bebedor
-              		@email: richeve.bebedor@gmail.com
-              
-              		Permission is hereby granted, free of charge, to any person obtaining a copy
-              		of this software and associated documentation files (the "Software"), to deal
-              		in the Software without restriction, including without limitation the rights
-              		to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-              		copies of the Software, and to permit persons to whom the Software is
-              		furnished to do so, subject to the following conditions:
-              
-              		The above copyright notice and this permission notice shall be included in all
-              		copies or substantial portions of the Software.
-              
-              		THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-              		IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-              		FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-              		AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-              		LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-              		OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-              		SOFTWARE.
-              	@end-module-license
-              
-              	@module-configuration:
-              		{
-              			"package": "called",
-              			"path": "called/called.js",
-              			"file": "called.js",
-              			"module": "called",
-              			"author": "Richeve S. Bebedor",
-              			"contributors": [
-              				"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
-              			],
-              			"eMail": "richeve.bebedor@gmail.com",
-              			"repository": "https://github.com/volkovasystems/called.git",
-              			"test": "called-test.js",
-              			"global": true
-              		}
-              	@end-module-configuration
-              
-              	@module-documentation:
-              		Call the callback once but better.
-              
-              		We will follow the standard conventional callback parameter structure
-              			`callback( error, result, [ parameter... ] )`
-              	@end-module-documentation
-              
-              	@include:
-              		{
-              			"dephall": "dephall",
-              			"harden": "harden",
-              			"kloak": "kloak",
-              			"raze": "raze",
-              			"wichevr": "wichevr",
-              			"zelf": "zelf"
-              		}
-              	@end-include
-              */
+"use strict";var _symbol = require("babel-runtime/core-js/symbol");var _symbol2 = _interopRequireDefault(_symbol);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} /*;
+                                                                                                                                                                                                                	@module-license:
+                                                                                                                                                                                                                		The MIT License (MIT)
+                                                                                                                                                                                                                		@mit-license
+                                                                                                                                                                                                                
+                                                                                                                                                                                                                		Copyright (@c) 2017 Richeve Siodina Bebedor
+                                                                                                                                                                                                                		@email: richeve.bebedor@gmail.com
+                                                                                                                                                                                                                
+                                                                                                                                                                                                                		Permission is hereby granted, free of charge, to any person obtaining a copy
+                                                                                                                                                                                                                		of this software and associated documentation files (the "Software"), to deal
+                                                                                                                                                                                                                		in the Software without restriction, including without limitation the rights
+                                                                                                                                                                                                                		to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+                                                                                                                                                                                                                		copies of the Software, and to permit persons to whom the Software is
+                                                                                                                                                                                                                		furnished to do so, subject to the following conditions:
+                                                                                                                                                                                                                
+                                                                                                                                                                                                                		The above copyright notice and this permission notice shall be included in all
+                                                                                                                                                                                                                		copies or substantial portions of the Software.
+                                                                                                                                                                                                                
+                                                                                                                                                                                                                		THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+                                                                                                                                                                                                                		IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+                                                                                                                                                                                                                		FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+                                                                                                                                                                                                                		AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+                                                                                                                                                                                                                		LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+                                                                                                                                                                                                                		OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+                                                                                                                                                                                                                		SOFTWARE.
+                                                                                                                                                                                                                	@end-module-license
+                                                                                                                                                                                                                
+                                                                                                                                                                                                                	@module-configuration:
+                                                                                                                                                                                                                		{
+                                                                                                                                                                                                                			"package": "called",
+                                                                                                                                                                                                                			"path": "called/called.js",
+                                                                                                                                                                                                                			"file": "called.js",
+                                                                                                                                                                                                                			"module": "called",
+                                                                                                                                                                                                                			"author": "Richeve S. Bebedor",
+                                                                                                                                                                                                                			"contributors": [
+                                                                                                                                                                                                                				"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
+                                                                                                                                                                                                                			],
+                                                                                                                                                                                                                			"eMail": "richeve.bebedor@gmail.com",
+                                                                                                                                                                                                                			"repository": "https://github.com/volkovasystems/called.git",
+                                                                                                                                                                                                                			"test": "called-test.js",
+                                                                                                                                                                                                                			"global": true
+                                                                                                                                                                                                                		}
+                                                                                                                                                                                                                	@end-module-configuration
+                                                                                                                                                                                                                
+                                                                                                                                                                                                                	@module-documentation:
+                                                                                                                                                                                                                		Call the callback once but better.
+                                                                                                                                                                                                                
+                                                                                                                                                                                                                		We will follow the standard conventional callback parameter structure
+                                                                                                                                                                                                                			`callback( error, result, [ parameter... ] )`
+                                                                                                                                                                                                                	@end-module-documentation
+                                                                                                                                                                                                                
+                                                                                                                                                                                                                	@include:
+                                                                                                                                                                                                                		{
+                                                                                                                                                                                                                			"depher": "depher",
+                                                                                                                                                                                                                			"harden": "harden",
+                                                                                                                                                                                                                			"kloak": "kloak",
+                                                                                                                                                                                                                			"raze": "raze",
+                                                                                                                                                                                                                			"wichevr": "wichevr",
+                                                                                                                                                                                                                			"zelf": "zelf"
+                                                                                                                                                                                                                		}
+                                                                                                                                                                                                                	@end-include
+                                                                                                                                                                                                                */
 
 var depher = require("depher");
 var harden = require("harden");
@@ -68,8 +68,8 @@ var raze = require("raze");
 var wichevr = require("wichevr");
 var zelf = require("zelf");
 
-var CALLED = "called";
-var CALLED_ONCE = "called-once";
+var CALLED = (0, _symbol2.default)("called");
+var CALLED_ONCE = (0, _symbol2.default)("called-once");
 
 var called = function called(method, defer) {
 	/*;
@@ -87,7 +87,7 @@ var called = function called(method, defer) {
 	method = depher(parameter, FUNCTION, function method() {return self;});
 	defer = depher(parameter, BOOLEAN, false);
 
-	if (method.CALLED_ONCE === CALLED_ONCE) {
+	if (method[CALLED_ONCE] === CALLED_ONCE) {
 		return method;
 	}
 
@@ -96,7 +96,7 @@ var called = function called(method, defer) {
 			return procedure.result;
 		}
 
-		harden("CALLED", CALLED, procedure);
+		harden(CALLED, CALLED, procedure);
 
 		var parameter = raze(arguments);
 
@@ -129,10 +129,12 @@ var called = function called(method, defer) {
 	/*;
                                         	@note:
                                         		This will let you check if the procedure has been called.
+                                        			This is not safe to be called outside of this context.
                                         	@end-note
                                         */
+
 	harden("called", function called() {
-		return procedure.CALLED === CALLED;
+		return procedure[CALLED] === CALLED;
 	}, procedure);
 
 	return procedure;
