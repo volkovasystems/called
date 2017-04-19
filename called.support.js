@@ -70,6 +70,7 @@ var zelf = require("zelf");
 
 var CALLED = (0, _symbol2.default)("called");
 var CALLED_ONCE = (0, _symbol2.default)("called-once");
+var RESULT = (0, _symbol2.default)("result");
 
 var called = function called(method, defer) {
 	/*;
@@ -93,7 +94,7 @@ var called = function called(method, defer) {
 
 	var procedure = function procedure() {
 		if (procedure.called()) {
-			return procedure.result;
+			return procedure[RESULT];
 		}
 
 		harden(CALLED, CALLED, procedure);
@@ -119,7 +120,7 @@ var called = function called(method, defer) {
 			result = wichevr(result, parameter[1], parameter[0]);
 		}
 
-		harden("result", result, procedure);
+		harden(RESULT, result, procedure);
 
 		return result;
 	};
