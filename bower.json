@@ -1,6 +1,6 @@
 {
   "name": "called",
-  "version": "0.25.0",
+  "version": "0.26.0",
   "description": "Call callback once but better.",
   "main": "called.deploy.js",
   "support": "called.support.js",
@@ -22,9 +22,9 @@
     "tests"
   ],
   "dependencies": {
-    "depher": "^0.30.0",
+    "depher": "^0.32.0",
     "harden": "^0.21.0",
-    "kloak": "^0.21.0",
+    "kloak": "^0.22.0",
     "raze": "^0.29.0",
     "wichevr": "^0.9.0",
     "zelf": "^0.11.0"

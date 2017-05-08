@@ -1,6 +1,6 @@
 {
   "name": "called",
-  "version": "0.25.0",
+  "version": "0.26.0",
   "description": "Call callback once but better.",
   "main": "called.js",
   "support": "called.support.js",
@@ -29,9 +29,9 @@
   "homepage": "https://github.com/volkovasystems/called#readme",
   "dependencies": {
     "babel-runtime": "^6.23.0",
-    "depher": "^0.30.0",
+    "depher": "^0.32.0",
     "harden": "^0.21.0",
-    "kloak": "^0.21.0",
+    "kloak": "^0.22.0",
     "raze": "^0.29.0",
     "wichevr": "^0.9.0",
     "zelf": "^0.11.0"
@@ -42,6 +42,6 @@
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-latest": "^6.24.1",
     "source-map-loader": "^0.2.1",
-    "webpack": "^2.4.1"
+    "webpack": "^2.5.1"
   }
 }
