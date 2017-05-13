@@ -1,2 +1,2 @@
 # called
-Call callback once but better.
+Call the method once but better.

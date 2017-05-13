@@ -1,10 +1,12 @@
 yarn add \
 babel-runtime \
-depher \
+burne \
+falzy \
 harden \
 kloak \
+mrkd \
+protype \
 raze \
-wichevr \
 zelf \
 --save && \
 yarn add \
@@ -16,11 +18,13 @@ source-map-loader \
 webpack \
 --dev && \
 bower install \
-depher \
+burne \
+falzy \
 harden \
 kloak \
+mrkd \
+protype \
 raze \
-wichevr \
 zelf \
 --save \
 --force-latest

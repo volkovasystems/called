@@ -43,36 +43,37 @@
 	@end-module-configuration
 
 	@module-documentation:
-		Call the callback once but better.
-
-		We will follow the standard conventional callback parameter structure
-			`callback( error, result, [ parameter... ] )`
+		Call the method once but better.
 	@end-module-documentation
 
 	@include:
 		{
-			"depher": "depher",
+			"burne": "burne",
+			"falzy": "falzy",
 			"harden": "harden",
 			"kloak": "kloak",
+			"mrkd": "mrkd",
+			"protype": "protype",
 			"raze": "raze",
-			"wichevr": "wichevr",
 			"zelf": "zelf"
 		}
 	@end-include
 */
 
-const depher = require( "depher" );
+const burne = require( "burne" );
+const falzy = require( "falzy" );
 const harden = require( "harden" );
 const kloak = require( "kloak" );
+const mrkd = require( "mrkd" );
+const protype = require( "protype" );
 const raze = require( "raze" );
-const wichevr = require( "wichevr" );
 const zelf = require( "zelf" );
 
-const CALLED = Symbol( "called" );
+const CALLED = Symbol.for( "called" );
 const CALLED_ONCE = Symbol( "called-once" );
 const RESULT = Symbol( "result" );
 
-const called = function called( method, defer ){
+const called = function called( method ){
 	/*;
 		@meta-configuration:
 			{
@@ -84,59 +85,51 @@ const called = function called( method, defer ){
 
 	let self = zelf( this );
 
-	let parameter = raze( arguments );
-	method = depher( parameter, FUNCTION, function method( ){ return self; } );
-	defer = depher( parameter, BOOLEAN, false );
+	if( falzy( method ) || !protype( method, FUNCTION ) ){
+		method = function method( ){ return self; };
+	}
 
-	if( method[ CALLED_ONCE ] === CALLED_ONCE ){
+	if( mrkd( CALLED_ONCE, method, true ) ){
 		return method;
 	}
 
 	let procedure = function procedure( ){
-		if( procedure.called( ) ){
-			return procedure[ RESULT ];
+		if( mrkd( CALLED, procedure, true ) ){
+			let result = procedure[ RESULT ];
+
+			if( result instanceof Error ){
+				throw new Error( `failed called once method, ${ result.stack }` );
+			}
+
+			return result;
 		}
 
-		harden( CALLED, CALLED, procedure );
+		burne( CALLED, procedure );
 
-		let parameter = raze( arguments );
+		let result = self;
+		try{
+			/*;
+				@note:
+					Do not modify this apply call here, we cannot use bind since it will
+						try to hard override the context.
+				@end-note
+			*/
+			result = method.apply( self, raze( arguments ) );
 
-		/*;
-			@note:
-				Do not modify this apply call here, we cannot use bind since it will
-					try to hard override the context.
-			@end-note
-		*/
-		let result = method.apply( self, parameter );
-
-		/*;
-			@note:
-				If defer is activated, it will follow the standard conventional
-					callback parameter structure and will defer for result and error
-					if the method does not return a result.
-			@end-note
-		*/
-		if( defer ){
-			result = wichevr( result, parameter[ 1 ], parameter[ 0 ] );
+		}catch( error ){
+			result = error;
 		}
 
 		harden( RESULT, result, procedure );
+
+		if( result instanceof Error ){
+			throw new Error( `failed called once method, ${ result.stack }` );
+		}
 
 		return result;
 	};
 
 	kloak( method, procedure, CALLED_ONCE );
-
-	/*;
-		@note:
-			This will let you check if the procedure has been called.
-
-			This is not safe to be called outside of this context.
-		@end-note
-	*/
-	harden( "called", function called( ){
-		return procedure[ CALLED ] === CALLED;
-	}, procedure );
 
 	return procedure;
 };
