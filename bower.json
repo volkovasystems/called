@@ -1,13 +1,13 @@
 {
   "name": "called",
-  "version": "0.29.0",
+  "version": "0.30.0",
   "description": "Call the method once but better.",
   "main": "called.deploy.js",
   "support": "called.support.js",
   "authors": [
     "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
     "John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
-    "Vinse Vinalon"
+    "Vinse Vinalon <vinsevinalon@gmail.com>"
   ],
   "license": "MIT",
   "keywords": [
@@ -26,8 +26,8 @@
     "burne": "^0.3.0",
     "falzy": "^0.20.0",
     "harden": "^0.22.0",
-    "kloak": "^0.26.0",
-    "mrkd": "^0.7.0",
+    "kloak": "^0.27.0",
+    "mrkd": "^0.8.0",
     "protype": "^0.22.0",
     "raze": "^0.30.0",
     "zelf": "^0.12.0"
