@@ -1,6 +1,6 @@
 {
   "name": "called",
-  "version": "0.30.0",
+  "version": "0.31.0",
   "description": "Call the method once but better.",
   "main": "called.deploy.js",
   "support": "called.support.js",
@@ -23,10 +23,10 @@
     "tests"
   ],
   "dependencies": {
-    "burne": "^0.3.0",
+    "burne": "^0.4.0",
     "falzy": "^0.20.0",
     "harden": "^0.22.0",
-    "kloak": "^0.27.0",
+    "kloak": "^0.28.0",
     "mrkd": "^0.8.0",
     "protype": "^0.22.0",
     "raze": "^0.30.0",
