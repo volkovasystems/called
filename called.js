@@ -54,7 +54,6 @@
 			"harden": "harden",
 			"kloak": "kloak",
 			"mrkd": "mrkd",
-			"protype": "protype",
 			"raze": "raze",
 			"zelf": "zelf"
 		}
@@ -66,7 +65,6 @@ const falzy = require( "falzy" );
 const harden = require( "harden" );
 const kloak = require( "kloak" );
 const mrkd = require( "mrkd" );
-const protype = require( "protype" );
 const raze = require( "raze" );
 const zelf = require( "zelf" );
 
@@ -86,7 +84,7 @@ const called = function called( method ){
 
 	let self = zelf( this );
 
-	if( falzy( method ) || !protype( method, FUNCTION ) ){
+	if( falzy( method ) || typeof method != "function" ){
 		method = function method( ){ return self; };
 	}
 
