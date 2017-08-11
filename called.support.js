@@ -54,7 +54,6 @@
                                                                                                                                                                                                                                                                                                                 			"harden": "harden",
                                                                                                                                                                                                                                                                                                                 			"kloak": "kloak",
                                                                                                                                                                                                                                                                                                                 			"mrkd": "mrkd",
-                                                                                                                                                                                                                                                                                                                			"protype": "protype",
                                                                                                                                                                                                                                                                                                                 			"raze": "raze",
                                                                                                                                                                                                                                                                                                                 			"zelf": "zelf"
                                                                                                                                                                                                                                                                                                                 		}
@@ -66,7 +65,6 @@ var falzy = require("falzy");
 var harden = require("harden");
 var kloak = require("kloak");
 var mrkd = require("mrkd");
-var protype = require("protype");
 var raze = require("raze");
 var zelf = require("zelf");
 
@@ -86,7 +84,7 @@ var called = function called(method) {
 
 	var self = zelf(this);
 
-	if (falzy(method) || !protype(method, FUNCTION)) {
+	if (falzy(method) || typeof method != "function") {
 		method = function method() {return self;};
 	}
 

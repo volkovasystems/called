@@ -1,50 +1,53 @@
 {
-  "name": "called",
-  "version": "0.31.0",
-  "description": "Call the method once but better.",
-  "main": "called.js",
-  "support": "called.support.js",
-  "deploy": "called.deploy.js",
-  "browser": "called.deploy.js",
-  "scripts": {
-    "build": "babel called.js --out-file called.support.js --source-maps && webpack --progress --display-modules",
-    "test": "mocha called-test.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/volkovasystems/called.git"
-  },
-  "keywords": [
-    "callback",
-    "once"
-  ],
-  "author": "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
-  "contributors": [
-    "John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
-    "Vinse Vinalon <vinsevinalon@gmail.com>"
-  ],
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/volkovasystems/called/issues"
-  },
-  "homepage": "https://github.com/volkovasystems/called#readme",
-  "dependencies": {
-    "babel-runtime": "^6.23.0",
-    "burne": "^0.4.0",
-    "falzy": "^0.20.0",
-    "harden": "^0.22.0",
-    "kloak": "^0.28.0",
-    "mrkd": "^0.8.0",
-    "protype": "^0.22.0",
-    "raze": "^0.30.0",
-    "zelf": "^0.12.0"
-  },
-  "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-core": "^6.25.0",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-latest": "^6.24.1",
-    "source-map-loader": "^0.2.1",
-    "webpack": "^3.0.0"
-  }
+	"name": "called",
+	"version": "0.32.0",
+	"description": "Call the method once but better.",
+	"main": "called.js",
+	"support": "called.support.js",
+	"deploy": "called.deploy.js",
+	"browser": "called.deploy.js",
+	"scripts": {
+		"pristine": "rsetmod clean && flxc execute ./.install.sh",
+		"clear": "rsetmod clean --clear",
+		"build": "babel called.js --out-file called.support.js --source-maps && webpack --progress --display-modules",
+		"pretest": "npm run clear && npm run build",
+		"test": "node called-test.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/volkovasystems/called.git"
+	},
+	"keywords": [
+		"callback",
+		"once"
+	],
+	"author": "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
+	"contributors": [
+		"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
+		"Vinse Vinalon <vinsevinalon@gmail.com>"
+	],
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/volkovasystems/called/issues"
+	},
+	"homepage": "https://github.com/volkovasystems/called#readme",
+	"dependencies": {
+		"babel-runtime": "^6.25.0",
+		"burne": "^0.6.0",
+		"falzy": "^0.23.0",
+		"harden": "^0.23.0",
+		"kloak": "^0.30.0",
+		"mrkd": "^0.11.0",
+		"protype": "^0.24.0",
+		"raze": "^0.34.0",
+		"zelf": "^0.14.0"
+	},
+	"devDependencies": {
+		"babel-cli": "^6.24.1",
+		"babel-core": "^6.25.0",
+		"babel-plugin-transform-runtime": "^6.23.0",
+		"babel-preset-latest": "^6.24.1",
+		"source-map-loader": "^0.2.1",
+		"webpack": "^3.5.3"
+	}
 }
