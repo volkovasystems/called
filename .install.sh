@@ -5,7 +5,6 @@ falzy \
 harden \
 kloak \
 mrkd \
-protype \
 raze \
 zelf \
 --save && \
@@ -23,7 +22,6 @@ falzy \
 harden \
 kloak \
 mrkd \
-protype \
 raze \
 zelf \
 --save \
