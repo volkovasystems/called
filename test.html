@@ -1,31 +1,26 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>called unit test</title>
+		<meta charset="utf-8">
 
-		<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.3.2.css">
+		<title>test:called</title>
 
-		<script type="application/javascript" src="https://code.jquery.com/qunit/qunit-2.3.2.js"></script>
-
-		<script type="application/javascript" src="./called.deploy.js"></script>
+		<link rel="stylesheet" href="https://unpkg.com/mocha/mocha.css"/>
 	</head>
 
 	<body>
-		<div id="qunit"></div>
+		<div id="mocha"></div>
 
-		<div id="qunit-fixture"></div>
+		<script type="application/javascript" src="https://unpkg.com/mocha/mocha.js"></script>
 
 		<script type="application/javascript">
-			QUnit.test( "called unit test", function( assert ) {
+			mocha.setup( "bdd" );
+		</script>
 
-				let test = called( function test( number, string ){
-					return string;
-				} );
+		<script type="application/javascript" src="./test.deploy.js"></script>
 
-				assert.equal( test( 123, "hello world" ), "hello world", "should be equal to 'hello world'" );
-
-				assert.equal( test( "yeah", "sample" ), "hello world", "should be equal to 'hello world'" );
-			} );
+		<script type="application/javascript">
+			mocha.run( );
 		</script>
 	</body>
 </html>
