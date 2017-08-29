@@ -1,16 +1,32 @@
 {
-  "stats": {
-    "suites": 0,
-    "tests": 0,
-    "passes": 0,
-    "pending": 0,
-    "failures": 0,
-    "start": "2017-08-17T14:46:39.889Z",
-    "end": "2017-08-17T14:46:39.890Z",
-    "duration": 1
-  },
-  "tests": [],
-  "pending": [],
-  "failures": [],
-  "passes": []
+	"stats": {
+		"suites": 2,
+		"tests": 1,
+		"passes": 1,
+		"pending": 0,
+		"failures": 0,
+		"start": "2017-08-29T06:05:13.842Z",
+		"end": "2017-08-29T06:05:13.857Z",
+		"duration": 15
+	},
+	"tests": [
+		{
+			"title": "should return 'hello world'",
+			"fullTitle": "called `called( function test( number, string ){ return string } )` should return 'hello world'",
+			"duration": 10,
+			"currentRetry": 0,
+			"err": {}
+		}
+	],
+	"pending": [],
+	"failures": [],
+	"passes": [
+		{
+			"title": "should return 'hello world'",
+			"fullTitle": "called `called( function test( number, string ){ return string } )` should return 'hello world'",
+			"duration": 10,
+			"currentRetry": 0,
+			"err": {}
+		}
+	]
 }

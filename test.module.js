@@ -70,6 +70,20 @@ const path = require( "path" );
 
 describe( "called", ( ) => {
 
+	describe( "`called( function test( number, string ){ return string } )`", ( ) => {
+		it( "should return 'hello world'", ( ) => {
+
+			let test = called( function test( number, string ){
+				return string;
+			} );
+
+			assert.equal( test( 123, "hello world" ), "hello world" );
+
+			assert.equal( test( "yeah", "sample" ), "hello world" );
+
+		} );
+	} );
+
 } );
 
 //: @end-server
@@ -78,6 +92,21 @@ describe( "called", ( ) => {
 //: @client:
 
 describe( "called", ( ) => {
+
+	describe( "`called( function test( number, string ){ return string } )`", ( ) => {
+		it( "should return 'hello world'", ( ) => {
+
+			let test = called( function test( number, string ){
+				return string;
+			} );
+
+			assert.equal( test( 123, "hello world" ), "hello world" );
+
+			assert.equal( test( "yeah", "sample" ), "hello world" );
+
+		} );
+	} );
+
 } );
 
 //: @end-client
@@ -86,6 +115,34 @@ describe( "called", ( ) => {
 //: @bridge:
 
 describe( "called", ( ) => {
+
+	let bridgeURL = `file://${ path.resolve( __dirname, "bridge.html" ) }`;
+
+	describe( "`called( function test( number, string ){ return string } )`", ( ) => {
+		it( "should return 'hello world'", ( ) => {
+
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+
+					let test = called( function test( number, string ){
+						return string;
+					} );
+
+					let result1 = test( 123, "hello world" );
+					let result2 = test( "yeah", "sample" );
+
+					return result1 == result2;
+
+				}
+
+			).value;
+
+			assert.equal( result, true );
+
+		} );
+	} );
+
 } );
 
 //: @end-bridge

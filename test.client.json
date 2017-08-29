@@ -1,0 +1,84 @@
+{
+	"state": {
+		"passed": 1,
+		"failed": 0,
+		"skipped": 0
+	},
+	"start": "2017-08-29T06:05:15.276Z",
+	"end": "2017-08-29T06:05:59.561Z",
+	"capabilities": {
+		"browserName": "chrome",
+		"chromeOptions": {
+			"args": [
+				"disable-gpu",
+				"headless"
+			]
+		},
+		"proxy": null
+	},
+	"host": "127.0.0.1",
+	"port": 4444,
+	"baseUrl": "http://localhost",
+	"framework": "mocha",
+	"mochaOpts": {
+		"timeout": 10000,
+		"ui": "bdd"
+	},
+	"suites": [
+		{
+			"name": "called",
+			"duration": 0,
+			"start": "2017-08-29T06:05:59.186Z",
+			"tests": [],
+			"hooks": []
+		},
+		{
+			"name": "called",
+			"duration": 188,
+			"start": "2017-08-29T06:05:59.187Z",
+			"end": "2017-08-29T06:05:59.375Z",
+			"tests": [],
+			"hooks": [
+				{
+					"start": "2017-08-29T06:05:59.189Z",
+					"end": "2017-08-29T06:05:59.190Z",
+					"duration": 1,
+					"title": "\"before each\" hook",
+					"associatedSuite": "called",
+					"associatedTest": "should return 'hello world'"
+				},
+				{
+					"start": "2017-08-29T06:05:59.374Z",
+					"end": "2017-08-29T06:05:59.374Z",
+					"duration": 0,
+					"title": "\"after each\" hook",
+					"associatedSuite": "called",
+					"associatedTest": "should return 'hello world'"
+				},
+				{
+					"start": "2017-08-29T06:05:59.375Z",
+					"end": "2017-08-29T06:05:59.376Z",
+					"duration": 1,
+					"title": "\"after all\" hook",
+					"associatedSuite": "called"
+				}
+			]
+		},
+		{
+			"name": "`called( function test( number, string ){ return string } )`",
+			"duration": 187,
+			"start": "2017-08-29T06:05:59.188Z",
+			"end": "2017-08-29T06:05:59.375Z",
+			"tests": [
+				{
+					"name": "should return 'hello world'",
+					"start": "2017-08-29T06:05:59.188Z",
+					"end": "2017-08-29T06:05:59.374Z",
+					"duration": 186,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		}
+	]
+}

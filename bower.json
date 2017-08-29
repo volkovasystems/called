@@ -21,5 +21,14 @@
 		"bower_components",
 		"test",
 		"tests"
-	]
+	],
+	"dependencies": {
+		"burne": "^0.6.0",
+		"falzy": "^0.23.0",
+		"harden": "^0.23.0",
+		"kloak": "^0.30.0",
+		"mrkd": "^0.11.0",
+		"raze": "^0.34.0",
+		"zelf": "^0.14.0"
+	}
 }

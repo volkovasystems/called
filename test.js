@@ -66,6 +66,20 @@ const called = require( "./called.js" );
 
 describe( "called", ( ) => {
 
+	describe( "`called( function test( number, string ){ return string } )`", ( ) => {
+		it( "should return 'hello world'", ( ) => {
+
+			let test = called( function test( number, string ){
+				return string;
+			} );
+
+			assert.equal( test( 123, "hello world" ), "hello world" );
+
+			assert.equal( test( "yeah", "sample" ), "hello world" );
+
+		} );
+	} );
+
 } );
 
 //: @end-server
